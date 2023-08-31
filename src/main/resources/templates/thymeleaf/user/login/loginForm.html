@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LoginForm</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/login_prcs}" method="post" th:object="${account}">
+    <label>
+        아이디<br>
+        <input type="text" th:field="*{username}" />
+    </label>
+    <br><br>
+    <label>
+        비밀번호<br>
+        <input type="text" th:field="*{password}" />
+    </label>
+
+    <div th:if="${param.error}">
+        <span th:text="${param.exception}"></span>
+    </div>
+
+
+    <input type="submit" value="로그인">
+
+
+</form>
+</body>
+</html>

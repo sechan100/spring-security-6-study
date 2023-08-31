@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>홈</li>
+        <li sec:authorize="isAnonymous()">로그인</li>
+        <li sec:authorize="isAuthenticated()">
+            <a th:href="@{/logout}">로그아웃</a>
+        </li>
+        <li>회원가입</li>
+    </ul>
+
+</nav>
+
+
+    <h1>Main</h1>
+    <a href="/mypage">my page</a>
+    <br>
+    <a href="/message">message</a>
+    <br>
+    <a href="/config">config</a>
+</body>
+</html>
